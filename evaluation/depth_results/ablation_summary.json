@@ -1,0 +1,47 @@
+{
+  "single": {
+    "runs": 8,
+    "calls": 8,
+    "input_tokens": 26193,
+    "output_tokens": 1615,
+    "median_s_all": 2.3898,
+    "median_s_answerable": 2.3898,
+    "answerable_calls": 4,
+    "answerable_total_tokens": 14384,
+    "mean_target_paper_coverage": 1.0,
+    "unanswerable_abstained": 4,
+    "unanswerable_cases": 4,
+    "returned_claims": 18,
+    "all_quote_checks_passed": true
+  },
+  "multi_v3": {
+    "runs": 8,
+    "calls": 34,
+    "input_tokens": 41418,
+    "output_tokens": 6050,
+    "median_s_all": 8.34395,
+    "median_s_answerable": 7.3043000000000005,
+    "answerable_calls": 20,
+    "answerable_total_tokens": 29394,
+    "mean_target_paper_coverage": 0.875,
+    "unanswerable_abstained": 3,
+    "unanswerable_cases": 4,
+    "returned_claims": 22,
+    "all_quote_checks_passed": true
+  },
+  "multi_v4": {
+    "runs": 8,
+    "calls": 34,
+    "input_tokens": 41828,
+    "output_tokens": 6013,
+    "median_s_all": 6.02815,
+    "median_s_answerable": 7.38085,
+    "answerable_calls": 20,
+    "answerable_total_tokens": 29872,
+    "mean_target_paper_coverage": 1.0,
+    "unanswerable_abstained": 4,
+    "unanswerable_cases": 4,
+    "returned_claims": 19,
+    "all_quote_checks_passed": true
+  }
+}

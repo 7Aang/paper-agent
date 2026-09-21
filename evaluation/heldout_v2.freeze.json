@@ -1,0 +1,5 @@
+{
+  "sha256": "d2e65586c2ad84de29a28e6d140c8cbf6bb843e1013e5c2be2c4bc0f932f6e04",
+  "status": "Frozen before running retrieval evaluation; no tuning on these queries",
+  "scope": "New questions on existing 12-paper corpus, not held-out documents; assistant-authored, human review pending"
+}

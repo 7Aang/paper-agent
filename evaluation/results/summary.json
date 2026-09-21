@@ -1,0 +1,58 @@
+{
+  "scope": "Local seed-labeled 12-paper / 30-query English retrieval evaluation. Not held-out, not independently annotated, not an LLM answer-quality benchmark.",
+  "query_sha256": "b7f767f76b204f61a3f6b3bf63213cf3b088f85816b66518cf2a9a949004d235",
+  "corpus_signature": "b8c3bdceac525e705feea04d6b751baa5b44cfbb7d7f36e1dfc3f1419b443afe",
+  "environment": {
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.22000-SP0"
+  },
+  "papers": 12,
+  "pages": 232,
+  "chunks": 993,
+  "queries": 30,
+  "index_build_s": 0.06148800003575161,
+  "retrieval": {
+    "baseline": {
+      "hit_at_1": 0.8,
+      "recall_at_3": 0.9833333333333333,
+      "mrr_at_3": 0.8944444444444445,
+      "median_latency_ms": 0.39474997902289033
+    },
+    "bm25": {
+      "hit_at_1": 0.9666666666666667,
+      "recall_at_3": 0.9833333333333333,
+      "mrr_at_3": 0.9833333333333333,
+      "median_latency_ms": 0.42654998833313584
+    },
+    "optimized": {
+      "hit_at_1": 1,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 1.0,
+      "median_latency_ms": 0.5868500156793743
+    }
+  },
+  "cache": {
+    "cold_seconds": [
+      1.0125247999676503,
+      0.7807091999566182,
+      0.7661840000073425
+    ],
+    "warm_seconds": [
+      0.034008200047537684,
+      0.03403989999787882,
+      0.03415809996658936
+    ],
+    "cold_median_s": 0.7807091999566182,
+    "warm_median_s": 0.03403989999787882,
+    "median_reduction_pct": 95.639874616596
+  },
+  "context": {
+    "unit": "characters, not tokens; selection only, quality tradeoff not evaluated",
+    "median_reduction_pct": 95.49483013007409
+  },
+  "provenance_gate": {
+    "cases": 48,
+    "correct": 48,
+    "description": "12 exact-source positives + 36 structural corruptions; semantic entailment NOT measured"
+  }
+}

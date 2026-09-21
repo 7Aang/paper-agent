@@ -1,0 +1,386 @@
+[
+  {
+    "paper_id": "2004.12832",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2004.12832",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2004.12832",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2004.12832",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2401.15884",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2401.15884",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2401.15884",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2401.15884",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2004.04906",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2004.04906",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2004.04906",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2004.04906",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2404.16130",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2404.16130",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2404.16130",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2404.16130",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2401.18059",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2401.18059",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2401.18059",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2401.18059",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2002.08909",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2002.08909",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2002.08909",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2002.08909",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2210.03629",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2210.03629",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2210.03629",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2210.03629",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2303.11366",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2303.11366",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2303.11366",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2303.11366",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2005.11401",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2005.11401",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2005.11401",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2005.11401",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2310.11511",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2310.11511",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2310.11511",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2310.11511",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2302.04761",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2302.04761",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2302.04761",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2302.04761",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  },
+  {
+    "paper_id": "2305.10601",
+    "kind": "valid",
+    "expected": true,
+    "accepted": true,
+    "correct": true,
+    "reason": "provenance_verified"
+  },
+  {
+    "paper_id": "2305.10601",
+    "kind": "unknown_id",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "unknown_evidence"
+  },
+  {
+    "paper_id": "2305.10601",
+    "kind": "fabricated_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_not_in_chunk"
+  },
+  {
+    "paper_id": "2305.10601",
+    "kind": "short_quote",
+    "expected": false,
+    "accepted": false,
+    "correct": true,
+    "reason": "quote_too_short"
+  }
+]

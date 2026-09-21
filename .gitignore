@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+.env
+*.egg-info/
+
+# Local corpus, databases, reports, and traces
+data/
+runs/
+*.sqlite3
+*.db
+*.pdf
+*.jsonl
+
+# Generated evaluation runs; compact summaries remain versioned
+evaluation/depth_runs/
+evaluation/upgrade_runs/
+evaluation/ui_smoke_runs/
+evaluation/results/checkpoints_live.json
+evaluation/results/connector_smoke.json
+evaluation/results/context_cases.json
+evaluation/results/live_final.json
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

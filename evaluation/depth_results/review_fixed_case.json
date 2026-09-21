@@ -1,0 +1,93 @@
+{
+  "scope": "Single diagnostic case with frozen candidate claims; not a general quality estimate",
+  "payload": {
+    "question": "What was the exact measured p99 latency in milliseconds when ReAct was deployed at Hangzhou Airport in August 2026?",
+    "claims": [
+      {
+        "claim": "The DPR reader can fit up to 100 passages per question into one batch on a single 32GB GPU, keeping latency almost identical to the single passage case at around 20ms.",
+        "quote": "While DPR processes up to 100 passages for each question, the reader is able to ﬁt all of them into one batch on a single 32GB GPU, thus the latency remains almost identical to the single passage case (around 20ms).",
+        "evidence_id": "2004.04906:p8:w450",
+        "kind": "result",
+        "paper_id": "2004.04906",
+        "page": 8,
+        "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+        "url": "https://arxiv.org/abs/2004.04906",
+        "provenance": "verified",
+        "semantic_status": "model_reviewed_not_ground_truth"
+      },
+      {
+        "claim": "The paper notes it is not completely clear how much more inference time the reader takes compared to ORQA despite considering more passages.",
+        "quote": "One thing worth noticing is that our reader does consider more passages compared to ORQA, although it is not completely clear how much more time it takes for inference.",
+        "evidence_id": "2004.04906:p8:w450",
+        "kind": "limitation",
+        "paper_id": "2004.04906",
+        "page": 8,
+        "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+        "url": "https://arxiv.org/abs/2004.04906",
+        "provenance": "verified",
+        "semantic_status": "model_reviewed_not_ground_truth"
+      }
+    ]
+  },
+  "results": [
+    {
+      "policy": "quote-only-v3",
+      "response": {
+        "verdicts": [
+          {
+            "index": 0,
+            "supported": true,
+            "unsupported_details": [],
+            "reason": "Every clause is entailed by the quote: DPR processes up to 100 passages per question, the reader fits them into one batch on a single 32GB GPU, and latency remains almost identical to the single passage case at around 20ms."
+          },
+          {
+            "index": 1,
+            "supported": true,
+            "unsupported_details": [],
+            "reason": "The quote directly states the reader considers more passages than ORQA and that it is not completely clear how much more inference time it takes."
+          }
+        ]
+      },
+      "accepted_indices": [
+        0,
+        1
+      ],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 619,
+        "completion_tokens": 119,
+        "usage_missing_calls": 0
+      }
+    },
+    {
+      "policy": "question-aware-v4",
+      "response": {
+        "verdicts": [
+          {
+            "index": 0,
+            "supported": true,
+            "unsupported_details": [],
+            "reason": "Every clause (up to 100 passages per question, one batch on a single 32GB GPU, latency almost identical to single passage case, around 20ms) is directly entailed by the quote."
+          },
+          {
+            "index": 1,
+            "supported": true,
+            "unsupported_details": [],
+            "reason": "The quote directly states the reader considers more passages than ORQA and that it is not completely clear how much more inference time it takes."
+          }
+        ],
+        "relevant": [
+          false,
+          false
+        ]
+      },
+      "accepted_indices": [],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 703,
+        "completion_tokens": 116,
+        "usage_missing_calls": 0
+      }
+    }
+  ]
+}

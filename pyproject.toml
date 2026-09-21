@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-agent-local"
+version = "0.1.0"
+description = "Evidence-first paper research with bounded multi-agent orchestration"
+requires-python = ">=3.11"
+dependencies = ["PyMuPDF>=1.24,<2", "truststore>=0.10,<1"]
+
+[project.scripts]
+paper-agent = "paper_agent.cli:main"
+
+[tool.setuptools.package-data]
+paper_agent = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

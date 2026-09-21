@@ -1,0 +1,58 @@
+{
+  "model": "deepseek-flash",
+  "provider": "https://api.deepseek.com",
+  "cases": [
+    {
+      "case": 1,
+      "query": "How do ReAct and Reflexion use feedback to improve language agent performance?",
+      "run_id": "3d6e12d1d2bb4cedbaf29eb4fa266203",
+      "status": "completed",
+      "claims": 8,
+      "rejected": 0,
+      "errors": [],
+      "elapsed_s": 6.3971,
+      "usage": {
+        "calls": 6,
+        "prompt_tokens": 6599,
+        "completion_tokens": 1470,
+        "usage_missing_calls": 0
+      },
+      "all_quotes_on_source_page": true
+    },
+    {
+      "case": 2,
+      "query": "Compare dense passage retrieval and ColBERT late interaction. What evidence supports their design differences?",
+      "run_id": "1ab4596b458c48e68f5fd1164edb86a6",
+      "status": "completed",
+      "claims": 8,
+      "rejected": 0,
+      "errors": [],
+      "elapsed_s": 6.0986,
+      "usage": {
+        "calls": 6,
+        "prompt_tokens": 6563,
+        "completion_tokens": 1246,
+        "usage_missing_calls": 0
+      },
+      "all_quotes_on_source_page": true
+    },
+    {
+      "case": 3,
+      "query": "比较 Self-RAG 和 Corrective Retrieval Augmented Generation 如何处理不可靠的检索证据。",
+      "run_id": "5f4a1a36e8384fb5bf3841210f7be6cf",
+      "status": "completed",
+      "claims": 8,
+      "rejected": 0,
+      "errors": [],
+      "elapsed_s": 9.5008,
+      "usage": {
+        "calls": 6,
+        "prompt_tokens": 6283,
+        "completion_tokens": 1258,
+        "usage_missing_calls": 0
+      },
+      "all_quotes_on_source_page": true
+    }
+  ],
+  "scope": "3 real end-to-end smoke cases, not a statistical quality benchmark. Quote provenance checked against PDF text. Semantic reviewer is the same model family, not independent gold truth."
+}

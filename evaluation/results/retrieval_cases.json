@@ -1,0 +1,1460 @@
+[
+  {
+    "query_id": "q01",
+    "mode": "baseline",
+    "query": "How are parametric and non-parametric memories combined for knowledge intensive generation?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2310.11511",
+      "2002.08909"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q02",
+    "mode": "baseline",
+    "query": "What is the difference between RAG Sequence and RAG Token marginalization?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2401.15884",
+      "2404.16130"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q03",
+    "mode": "baseline",
+    "query": "How does a dual encoder learn dense passage representations from question answer pairs?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2401.15884",
+      "2004.04906"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.3333333333333333
+  },
+  {
+    "query_id": "q04",
+    "mode": "baseline",
+    "query": "How are in-batch negatives and hard negatives used to train passage retrieval?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2004.04906",
+      "2401.15884",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q05",
+    "mode": "baseline",
+    "query": "How does late interaction use contextualized token embeddings and MaxSim?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2005.11401",
+      "2404.16130"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q06",
+    "mode": "baseline",
+    "query": "How can document representations be precomputed while preserving fine grained query document interaction?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q07",
+    "mode": "baseline",
+    "query": "How is a knowledge retriever trained with masked language modeling before question answering fine tuning?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2005.11401",
+      "2302.04761"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q08",
+    "mode": "baseline",
+    "query": "How does asynchronous maximum inner product search index refresh support retrieval pretraining?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2401.15884",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q09",
+    "mode": "baseline",
+    "query": "How are reasoning traces interleaved with actions for interactive decision making?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2303.11366",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q10",
+    "mode": "baseline",
+    "query": "How does ReAct perform on ALFWorld and WebShop environments?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2305.10601"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q11",
+    "mode": "baseline",
+    "query": "How can verbal reinforcement feedback stored in episodic memory improve later trials without updating weights?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2303.11366",
+      "2002.08909"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q12",
+    "mode": "baseline",
+    "query": "How do an actor evaluator and self reflection model improve code generation?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q13",
+    "mode": "baseline",
+    "query": "How can a language model explore a tree of intermediate thoughts with backtracking?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2305.10601",
+      "2005.11401",
+      "2002.08909"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q14",
+    "mode": "baseline",
+    "query": "How are breadth first and depth first search used for Game of 24 and mini crosswords?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2305.10601",
+      "2404.16130"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q15",
+    "mode": "baseline",
+    "query": "How can self supervised API call filtering teach a language model to use external tools?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q16",
+    "mode": "baseline",
+    "query": "How are calculator calendar translation and search tools incorporated through prediction loss filtering?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2210.03629",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q17",
+    "mode": "baseline",
+    "query": "How do reflection tokens control adaptive retrieval and critique generated answers?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2401.15884",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q18",
+    "mode": "baseline",
+    "query": "How do relevance support and utility reflection tokens guide segment level beam search?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2404.16130",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q19",
+    "mode": "baseline",
+    "query": "How does a retrieval evaluator trigger web search when retrieved documents are unreliable?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2005.11401",
+      "2002.08909"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q20",
+    "mode": "baseline",
+    "query": "What is the role of decompose then recompose in corrective retrieval knowledge refinement?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2002.08909",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q21",
+    "mode": "baseline",
+    "query": "How does recursive clustering and summarization build a tree for long document retrieval?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2401.15884",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q22",
+    "mode": "baseline",
+    "query": "How do collapsed tree retrieval and tree traversal compare for answering questions on long narratives?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2401.15884",
+      "2004.04906"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q23",
+    "mode": "baseline",
+    "query": "How do entity graph communities and community summaries enable global question answering?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2302.04761",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q24",
+    "mode": "baseline",
+    "query": "How are comprehensiveness and diversity evaluated for query focused summarization over a corpus?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2210.03629",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q25",
+    "mode": "baseline",
+    "query": "Compare retrieval augmented generation and retrieval augmented pretraining of language models.",
+    "gold": [
+      "2005.11401",
+      "2002.08909"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2005.11401",
+      "2404.16130"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 0.5,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q26",
+    "mode": "baseline",
+    "query": "Compare dense passage retrieval and contextualized late interaction for passage search.",
+    "gold": [
+      "2004.04906",
+      "2004.12832"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2004.04906",
+      "2004.12832"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q27",
+    "mode": "baseline",
+    "query": "Compare ReAct reasoning acting and Reflexion verbal reinforcement learning.",
+    "gold": [
+      "2210.03629",
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q28",
+    "mode": "baseline",
+    "query": "Compare Self-RAG critique and Corrective Retrieval Augmented Generation evaluator.",
+    "gold": [
+      "2310.11511",
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2310.11511",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q29",
+    "mode": "baseline",
+    "query": "Compare recursive tree organized retrieval and graph community summarization.",
+    "gold": [
+      "2401.18059",
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2401.18059",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q30",
+    "mode": "baseline",
+    "query": "Compare external tool API learning in Toolformer with reasoning and acting in ReAct.",
+    "gold": [
+      "2302.04761",
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2302.04761",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q01",
+    "mode": "bm25",
+    "query": "How are parametric and non-parametric memories combined for knowledge intensive generation?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2310.11511",
+      "2004.04906"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q02",
+    "mode": "bm25",
+    "query": "What is the difference between RAG Sequence and RAG Token marginalization?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2302.04761",
+      "2002.08909"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q03",
+    "mode": "bm25",
+    "query": "How does a dual encoder learn dense passage representations from question answer pairs?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2004.04906",
+      "2401.18059",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q04",
+    "mode": "bm25",
+    "query": "How are in-batch negatives and hard negatives used to train passage retrieval?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2004.04906",
+      "2310.11511",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q05",
+    "mode": "bm25",
+    "query": "How does late interaction use contextualized token embeddings and MaxSim?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2401.18059",
+      "2004.04906"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q06",
+    "mode": "bm25",
+    "query": "How can document representations be precomputed while preserving fine grained query document interaction?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q07",
+    "mode": "bm25",
+    "query": "How is a knowledge retriever trained with masked language modeling before question answering fine tuning?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2401.18059",
+      "2310.11511"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q08",
+    "mode": "bm25",
+    "query": "How does asynchronous maximum inner product search index refresh support retrieval pretraining?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2004.04906",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q09",
+    "mode": "bm25",
+    "query": "How are reasoning traces interleaved with actions for interactive decision making?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2303.11366",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q10",
+    "mode": "bm25",
+    "query": "How does ReAct perform on ALFWorld and WebShop environments?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2305.10601"
+    ],
+    "hit_at_1": 0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.5
+  },
+  {
+    "query_id": "q11",
+    "mode": "bm25",
+    "query": "How can verbal reinforcement feedback stored in episodic memory improve later trials without updating weights?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q12",
+    "mode": "bm25",
+    "query": "How do an actor evaluator and self reflection model improve code generation?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2305.10601",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q13",
+    "mode": "bm25",
+    "query": "How can a language model explore a tree of intermediate thoughts with backtracking?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2305.10601",
+      "2210.03629",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q14",
+    "mode": "bm25",
+    "query": "How are breadth first and depth first search used for Game of 24 and mini crosswords?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2305.10601",
+      "2401.18059",
+      "2210.03629"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q15",
+    "mode": "bm25",
+    "query": "How can self supervised API call filtering teach a language model to use external tools?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2401.15884",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q16",
+    "mode": "bm25",
+    "query": "How are calculator calendar translation and search tools incorporated through prediction loss filtering?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2401.15884",
+      "2310.11511"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q17",
+    "mode": "bm25",
+    "query": "How do reflection tokens control adaptive retrieval and critique generated answers?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2404.16130",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q18",
+    "mode": "bm25",
+    "query": "How do relevance support and utility reflection tokens guide segment level beam search?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2005.11401",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q19",
+    "mode": "bm25",
+    "query": "How does a retrieval evaluator trigger web search when retrieved documents are unreliable?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2310.11511",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q20",
+    "mode": "bm25",
+    "query": "What is the role of decompose then recompose in corrective retrieval knowledge refinement?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2210.03629",
+      "2002.08909"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q21",
+    "mode": "bm25",
+    "query": "How does recursive clustering and summarization build a tree for long document retrieval?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2404.16130",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q22",
+    "mode": "bm25",
+    "query": "How do collapsed tree retrieval and tree traversal compare for answering questions on long narratives?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2305.10601",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q23",
+    "mode": "bm25",
+    "query": "How do entity graph communities and community summaries enable global question answering?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2004.04906",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q24",
+    "mode": "bm25",
+    "query": "How are comprehensiveness and diversity evaluated for query focused summarization over a corpus?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2401.18059",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q25",
+    "mode": "bm25",
+    "query": "Compare retrieval augmented generation and retrieval augmented pretraining of language models.",
+    "gold": [
+      "2005.11401",
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2404.16130",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 0.5,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q26",
+    "mode": "bm25",
+    "query": "Compare dense passage retrieval and contextualized late interaction for passage search.",
+    "gold": [
+      "2004.04906",
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2004.04906",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q27",
+    "mode": "bm25",
+    "query": "Compare ReAct reasoning acting and Reflexion verbal reinforcement learning.",
+    "gold": [
+      "2210.03629",
+      "2303.11366"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2303.11366",
+      "2404.16130"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q28",
+    "mode": "bm25",
+    "query": "Compare Self-RAG critique and Corrective Retrieval Augmented Generation evaluator.",
+    "gold": [
+      "2310.11511",
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2310.11511",
+      "2404.16130"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q29",
+    "mode": "bm25",
+    "query": "Compare recursive tree organized retrieval and graph community summarization.",
+    "gold": [
+      "2401.18059",
+      "2404.16130"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2404.16130",
+      "2310.11511"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q30",
+    "mode": "bm25",
+    "query": "Compare external tool API learning in Toolformer with reasoning and acting in ReAct.",
+    "gold": [
+      "2302.04761",
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2302.04761",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q01",
+    "mode": "optimized",
+    "query": "How are parametric and non-parametric memories combined for knowledge intensive generation?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q02",
+    "mode": "optimized",
+    "query": "What is the difference between RAG Sequence and RAG Token marginalization?",
+    "gold": [
+      "2005.11401"
+    ],
+    "ranked": [
+      "2005.11401",
+      "2404.16130",
+      "2302.04761"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q03",
+    "mode": "optimized",
+    "query": "How does a dual encoder learn dense passage representations from question answer pairs?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2004.04906",
+      "2401.18059",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q04",
+    "mode": "optimized",
+    "query": "How are in-batch negatives and hard negatives used to train passage retrieval?",
+    "gold": [
+      "2004.04906"
+    ],
+    "ranked": [
+      "2004.04906",
+      "2310.11511",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q05",
+    "mode": "optimized",
+    "query": "How does late interaction use contextualized token embeddings and MaxSim?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2401.18059",
+      "2004.04906"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q06",
+    "mode": "optimized",
+    "query": "How can document representations be precomputed while preserving fine grained query document interaction?",
+    "gold": [
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q07",
+    "mode": "optimized",
+    "query": "How is a knowledge retriever trained with masked language modeling before question answering fine tuning?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2401.18059",
+      "2310.11511"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q08",
+    "mode": "optimized",
+    "query": "How does asynchronous maximum inner product search index refresh support retrieval pretraining?",
+    "gold": [
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2004.04906",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q09",
+    "mode": "optimized",
+    "query": "How are reasoning traces interleaved with actions for interactive decision making?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2303.11366",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q10",
+    "mode": "optimized",
+    "query": "How does ReAct perform on ALFWorld and WebShop environments?",
+    "gold": [
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2303.11366",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q11",
+    "mode": "optimized",
+    "query": "How can verbal reinforcement feedback stored in episodic memory improve later trials without updating weights?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q12",
+    "mode": "optimized",
+    "query": "How do an actor evaluator and self reflection model improve code generation?",
+    "gold": [
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q13",
+    "mode": "optimized",
+    "query": "How can a language model explore a tree of intermediate thoughts with backtracking?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2305.10601",
+      "2401.18059",
+      "2210.03629"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q14",
+    "mode": "optimized",
+    "query": "How are breadth first and depth first search used for Game of 24 and mini crosswords?",
+    "gold": [
+      "2305.10601"
+    ],
+    "ranked": [
+      "2305.10601",
+      "2401.18059",
+      "2210.03629"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q15",
+    "mode": "optimized",
+    "query": "How can self supervised API call filtering teach a language model to use external tools?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2401.15884",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q16",
+    "mode": "optimized",
+    "query": "How are calculator calendar translation and search tools incorporated through prediction loss filtering?",
+    "gold": [
+      "2302.04761"
+    ],
+    "ranked": [
+      "2302.04761",
+      "2310.11511",
+      "2401.15884"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q17",
+    "mode": "optimized",
+    "query": "How do reflection tokens control adaptive retrieval and critique generated answers?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2404.16130",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q18",
+    "mode": "optimized",
+    "query": "How do relevance support and utility reflection tokens guide segment level beam search?",
+    "gold": [
+      "2310.11511"
+    ],
+    "ranked": [
+      "2310.11511",
+      "2005.11401",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q19",
+    "mode": "optimized",
+    "query": "How does a retrieval evaluator trigger web search when retrieved documents are unreliable?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2005.11401",
+      "2310.11511"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q20",
+    "mode": "optimized",
+    "query": "What is the role of decompose then recompose in corrective retrieval knowledge refinement?",
+    "gold": [
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2002.08909",
+      "2210.03629"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q21",
+    "mode": "optimized",
+    "query": "How does recursive clustering and summarization build a tree for long document retrieval?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2404.16130",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q22",
+    "mode": "optimized",
+    "query": "How do collapsed tree retrieval and tree traversal compare for answering questions on long narratives?",
+    "gold": [
+      "2401.18059"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2305.10601",
+      "2004.04906"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q23",
+    "mode": "optimized",
+    "query": "How do entity graph communities and community summaries enable global question answering?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2004.04906",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q24",
+    "mode": "optimized",
+    "query": "How are comprehensiveness and diversity evaluated for query focused summarization over a corpus?",
+    "gold": [
+      "2404.16130"
+    ],
+    "ranked": [
+      "2404.16130",
+      "2401.18059",
+      "2004.12832"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q25",
+    "mode": "optimized",
+    "query": "Compare retrieval augmented generation and retrieval augmented pretraining of language models.",
+    "gold": [
+      "2005.11401",
+      "2002.08909"
+    ],
+    "ranked": [
+      "2002.08909",
+      "2401.15884",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q26",
+    "mode": "optimized",
+    "query": "Compare dense passage retrieval and contextualized late interaction for passage search.",
+    "gold": [
+      "2004.04906",
+      "2004.12832"
+    ],
+    "ranked": [
+      "2004.12832",
+      "2004.04906",
+      "2401.18059"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q27",
+    "mode": "optimized",
+    "query": "Compare ReAct reasoning acting and Reflexion verbal reinforcement learning.",
+    "gold": [
+      "2210.03629",
+      "2303.11366"
+    ],
+    "ranked": [
+      "2303.11366",
+      "2210.03629",
+      "2404.16130"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q28",
+    "mode": "optimized",
+    "query": "Compare Self-RAG critique and Corrective Retrieval Augmented Generation evaluator.",
+    "gold": [
+      "2310.11511",
+      "2401.15884"
+    ],
+    "ranked": [
+      "2401.15884",
+      "2310.11511",
+      "2005.11401"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q29",
+    "mode": "optimized",
+    "query": "Compare recursive tree organized retrieval and graph community summarization.",
+    "gold": [
+      "2401.18059",
+      "2404.16130"
+    ],
+    "ranked": [
+      "2401.18059",
+      "2404.16130",
+      "2305.10601"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  {
+    "query_id": "q30",
+    "mode": "optimized",
+    "query": "Compare external tool API learning in Toolformer with reasoning and acting in ReAct.",
+    "gold": [
+      "2302.04761",
+      "2210.03629"
+    ],
+    "ranked": [
+      "2210.03629",
+      "2302.04761",
+      "2303.11366"
+    ],
+    "hit_at_1": 1,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  }
+]
