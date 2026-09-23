@@ -1,0 +1,6 @@
+name: bm25
+method: bm25
+top_k: [1, 3, 5, 10]
+level: paper
+field_weighting: false
+query_expansion: false

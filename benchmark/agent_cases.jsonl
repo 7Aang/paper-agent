@@ -1,0 +1,8 @@
+{"id":"a1","question":"How does ColBERT preserve token-level query document interaction while allowing document representations to be precomputed?","answerable":true,"target_papers":["2004.12832"],"type":"single-paper"}
+{"id":"a2","question":"How does Reflexion improve an agent across trials without updating its model weights?","answerable":true,"target_papers":["2303.11366"],"type":"single-paper"}
+{"id":"a3","question":"Compare how ReAct uses environment observations and how Reflexion stores feedback for subsequent trials.","answerable":true,"target_papers":["2210.03629","2303.11366"],"type":"cross-paper"}
+{"id":"a4","question":"Compare how RAPTOR and GraphRAG organize summaries to answer questions that need a broad view of documents.","answerable":true,"target_papers":["2401.18059","2404.16130"],"type":"cross-paper"}
+{"id":"n1","question":"What was the exact measured p99 latency in milliseconds when ReAct was deployed at Hangzhou Airport in August 2026?","answerable":false,"target_papers":[],"type":"unanswerable"}
+{"id":"n2","question":"What is the exact number of NVIDIA H200 GPUs used by the ColBERT paper in its 2026 production deployment?","answerable":false,"target_papers":[],"type":"unanswerable"}
+{"id":"n3","question":"What exact annual licensing price in Chinese yuan does the Reflexion paper report for a commercial enterprise installation?","answerable":false,"target_papers":[],"type":"unanswerable"}
+{"id":"n4","question":"What percentage did RAPTOR reduce battery consumption in a real PX4 drone flight test conducted in September 2026?","answerable":false,"target_papers":[],"type":"unanswerable"}

@@ -1,0 +1,22 @@
+benchmark: benchmark/agent_cases.jsonl
+arms:
+  - name: extractive_gate_off
+    mode: extractive
+    evidence_gate: false
+    status: runnable_offline
+  - name: extractive_gate_on
+    mode: extractive
+    evidence_gate: true
+    status: runnable_offline
+  - name: verifier_off
+    mode: llm
+    status: REQUIRES API KEY
+  - name: verifier_on
+    mode: llm
+    status: REQUIRES API KEY
+  - name: simplified_pipeline
+    mode: llm
+    status: REQUIRES API KEY
+  - name: multi_agent
+    mode: llm
+    status: REQUIRES API KEY

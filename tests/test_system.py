@@ -4,7 +4,6 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from http.server import ThreadingHTTPServer
-from pathlib import Path
 
 import fitz
 import pytest
@@ -13,7 +12,7 @@ from paper_agent.agents import Pipeline, Provider, audit_claim
 from paper_agent.network import arxiv_pdf
 from paper_agent.retrieval import Index
 from paper_agent.server import App, handler
-from paper_agent.store import Store, normalize
+from paper_agent.store import Store
 
 
 def pdf(path, texts):

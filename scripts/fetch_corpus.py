@@ -16,7 +16,7 @@ def main():
     results = []
     for item in records:
         target = dest / (item["id"] + ".pdf")
-        url = "https://arxiv.org/pdf/" + item["id"]
+        url = item.get("pdf_url","https://arxiv.org/pdf/" + item["id"])
         try:
             if not target.exists():
                 request = urllib.request.Request(url, headers={"User-Agent":"PaperAgent-Educational/0.1"})

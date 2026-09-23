@@ -1,40 +1,45 @@
 # Paper Agent
 
-面向论文研读的证据优先多 Agent 系统。它把论文导入、混合检索、并行阅读、事实核验、失败恢复和可复现实验串成一条本地工作流，并为每条结论保留页码、原文引句和处理轨迹。
+证据优先的论文研读与可复现评测系统。项目把 PDF 导入、可替换检索器、受控 Agent 编排、引用门控、SQLite 检查点、结构化 trace 和故障注入测试放在同一条本地工作流中。每条输出结论都绑定论文、页码、证据 ID 和原文引句；证据不足时返回拒答。
 
-## 核心能力
+> 当前公开结果来自 12 篇论文和 24 个冻结诊断问题，标签由助理编写且尚未独立人工复核。它们用于回归与消融，不是公开 Benchmark。
 
-- **混合检索**：BM25、字段加权、短语匹配与查询扩展，支持论文级去重和页级定位。
-- **受控多 Agent 编排**：Planner、Paper Reader、Synthesizer、Verifier 分工；并发、超时、重试和降级均有上界。
-- **证据门控**：回答必须绑定论文、页码与可复核引句；证据不足时明确拒答。
-- **故障恢复**：SQLite 检查点、幂等步骤、过期任务恢复和单模型降级，避免重复调用与重复产物。
-- **本地界面**：零前端依赖的 Web UI，可查看任务状态、对照表、引用与 trace。
+## 系统结构
 
 ```mermaid
 flowchart LR
-    A[PDF / corpus manifest] --> B[Parser & chunker]
-    B --> C[SQLite index]
-    Q[Research question] --> D[Hybrid retriever]
-    C --> D
-    D --> E[Parallel paper readers]
-    E --> F[Synthesizer]
-    F --> G[Verifier]
-    G -->|supported| H[Report + evidence + trace]
-    G -->|insufficient| I[Abstain]
+    PDF[PDF + manifest] --> Parse[Parser / chunker]
+    Parse --> DB[(SQLite)]
+    Q[Question] --> Plan[Planner]
+    DB --> R[BM25 / Dense / Hybrid]
+    Plan --> R
+    R --> Readers[Parallel readers]
+    Readers --> Gate[Deterministic evidence gate]
+    Gate --> Synth[Synthesizer]
+    Synth --> Verify[Verifier]
+    Verify --> Report[Answer + paper + page + quote + trace]
+    Verify --> Refuse[Insufficient evidence]
 ```
 
-## 实测结果
+- **检索层**：BM25、字段加权、可审计 Query Expansion、Dense LSA、RRF Hybrid；Sentence-Transformer 与 Cross-Encoder 作为可选 Provider。
+- **Agent 层**：Planner、Paper Reader、Synthesizer、Verifier；限制并发、论文数、修复轮数和模型回退次数。
+- **证据层**：页级引句校验、精确信息约束门控、证据不足拒答；结构校验不冒充语义蕴含。
+- **工程层**：SQLite 内容寻址检查点、幂等导入、版本化 Pydantic schema、YAML 实验配置、FastAPI、Docker、GitHub Actions。
+- **评测层**：Paper-level Hit/Recall/MRR/nDCG、引用结构指标、Agent 拒答与目标论文覆盖、故障注入恢复率。
 
-所有原始摘要均保存在 [`evaluation/`](evaluation/)；仓库不包含论文 PDF。
+## 已实测结果
 
-| 验证项 | 结果 | 边界 |
-| --- | ---: | --- |
-| 自动化测试 | 58 passed | Windows, Python 3.12 |
-| 新问题检索集 | Hit@1 54.2% → 83.3%，Recall@3 100% | 12 篇既有语料、24 个助理标注问题，尚未独立人工复核 |
-| 不可回答问题拒答 | 4/4 | 冻结证据、多 Agent v4 |
-| 引句页内校验 | 全部通过 | 19 条返回结论；验证字符串存在性，不等同于语义蕴含 |
+| 实验 | 结果 | 适用边界 |
+|---|---:|---|
+| BM25 → Hybrid + Cross-Encoder | Hit@1 **83.3% → 100%** | 12 篇 / 24 个冻结问题；0 个独立人工复核 |
+| 轻量 Hybrid LSA | Hit@1 **91.7%**，平均检索 **1.14 ms** | 不含约 695 ms 索引构建；同上 |
+| Evidence Gate OFF → ON | 拒答 **0/4 → 4/4** | 4 个构造的“缺失精确细节”问题；可回答集覆盖率保持 4/4 |
+| 引用结构校验 | **24/24** 引句可回溯原页 | 只验证 provenance，不验证语义蕴含 |
+| 故障注入 | **10/10** 场景恢复 | 本地确定性注入；不代表线上 SLA |
 
-这组结果用于验证工程行为，不代表通用论文问答基准。单 Agent / 多 Agent 消融的请求数、时延和 token 用量见 [`ablation_summary.json`](evaluation/depth_results/ablation_summary.json)。
+完整定义、逐项限制、负结果和复现命令见 [Benchmark report](docs/BENCHMARK.md)。Cross-Encoder 的平均查询时延为 901.59 ms；单独使用 MiniLM Dense 的 Hit@1 只有 62.5%。字段加权没有提高当前 Hit@1，词表式 Query Expansion 使 Hit@3 从 100% 降至 95.8%，这些负结果同样保留。
+
+LLM Verifier 消融和多 Agent 对照当前状态为 `REQUIRES API KEY`，不会用历史或估计数字补齐。语义答案正确率也未声称已测。
 
 ## 快速开始
 
@@ -44,53 +49,66 @@ flowchart LR
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python -m paper_agent --help
-```
-
-按清单下载公开语料并建立索引：
-
-```powershell
 python scripts/fetch_corpus.py
 python -m paper_agent corpus --manifest data_manifest.json
 python -m paper_agent search "multi-agent verification"
 ```
 
-启动本地网页：
+本地 Web UI：
 
 ```powershell
 python -m paper_agent serve --port 8765
 ```
 
-使用 OpenAI 兼容接口时复制 `.env.example` 中的变量名，并在本机环境变量中填写密钥。不要把密钥提交到仓库。没有模型密钥时，检索、导入和离线测试仍可运行。
+FastAPI：
 
-## 测试与评测
+```powershell
+uvicorn paper_agent.api:app --host 127.0.0.1 --port 8000
+```
+
+Docker：
+
+```powershell
+docker compose up --build
+```
+
+LLM 模式使用 OpenAI-compatible HTTPS endpoint。复制 `.env.example` 的变量名，在本机设置密钥；不要提交 `.env`。`PAPER_AGENT_FALLBACK_MODELS` 最多启用两个顺序回退模型。
+
+## 评测与测试
 
 ```powershell
 python -m pytest -q
-python scripts/evaluate.py
-python scripts/depth_evaluate.py
+python scripts/validate_benchmark.py
+python scripts/eval_retrieval.py --config configs/retrieval/bm25.yaml
+python scripts/eval_retrieval.py --config configs/retrieval/dense_lsa.yaml
+python scripts/eval_retrieval.py --config configs/retrieval/hybrid_lsa.yaml
+python scripts/eval_agent.py --mode extractive --output results/agent/extractive_gate_on.json
+python scripts/eval_failures.py
+python scripts/build_report.py
 ```
 
-测试覆盖检索、引用校验、并发编排、预算限制、超时重试、断点恢复和 HTTP 接口。`evaluation/heldout_v2.freeze.json` 固定问题与标签哈希，避免评测过程中静默改题。
-
-## 数据与隐私
-
-- `data/`、`runs/`、数据库、PDF 和运行 trace 默认忽略。
-- 下载脚本只处理 [`data_manifest.json`](data_manifest.json) 中声明的公开论文，并核验 SHA-256。
-- 日志会对常见密钥格式脱敏；公开仓库仍应在提交前执行秘密扫描。
+每次检索实验保存配置、时间、Git commit、语料签名、Benchmark 哈希、逐题 CSV、汇总 JSON 和 Markdown 报告。冻结问题集由 `benchmark/manifest.json` 做 SHA-256 校验。数据状态和指标口径见 [Evaluation protocol](docs/EVALUATION.md)。
 
 ## 项目结构
 
 ```text
-paper_agent/   检索、存储、编排、检查点与 Web 服务
-scripts/       语料下载、评测与消融实验
-tests/         离线自动化测试
-evaluation/    冻结问题集和紧凑实验摘要
+paper_agent/   存储、检索、Agent 编排、检查点、API 与评测模块
+benchmark/     版本化问题与 Agent 用例；明确 verified 状态
+configs/       retrieval / ablation / judge 实验配置
+scripts/       语料、Benchmark、评测、故障注入和报告生成
+results/       可复现实验输出
+tests/         离线单元与集成测试
+docs/          Benchmark、评测口径和部署说明
 ```
 
-## 致谢
+PDF、SQLite、密钥、模型缓存和运行 trace 默认不进入 Git。语料 manifest 保存 title、authors、year、arXiv/source URL、DOI（存在时）；下载后的 provenance 文件保存 PDF SHA-256。
 
-项目选题与功能拆分参考了 [AgentGuide](https://github.com/adongwanai/AgentGuide) 中的 Paper Agent 项目建议；本仓库实现、测试与评测代码为独立完成。
+## 当前限制
+
+- 当前主要评测集规模较小且未独立人工复核；100+ 论文语料和 200+ 人工冻结问题仍是后续数据工作。
+- PDF 表格、公式和扫描件解析有限，扫描件需要额外 OCR。
+- LLM-as-a-Judge 配置已预留，但在人工校准和保存原始输出之前不报告其准确率。
+- FastAPI 路由已做本地集成测试；当前机器没有 Docker，镜像构建标记为 `NOT RUN`。两者都不代表生产负载测试或线上 SLA。
 
 ## License
 

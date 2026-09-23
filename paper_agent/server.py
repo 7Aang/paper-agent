@@ -1,7 +1,6 @@
 """Local-only HTTP UI. Files exposed by opaque IDs, never arbitrary paths."""
 from __future__ import annotations
 import json
-import mimetypes
 import os
 import re
 import tempfile

@@ -1,0 +1,15 @@
+services:
+  paper-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      PAPER_AGENT_HOME: /app/data
+      PAPER_AGENT_RUNS: /app/runs
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data
+      - ./runs:/app/runs
+    restart: unless-stopped

@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import csv
-import hashlib
 import json
 import os
 import re
@@ -17,6 +16,7 @@ from .network import request_bytes
 from .retrieval import Index, tokens
 from .store import Store, normalize
 from .checkpoints import CheckpointProvider, StepCache
+from .schemas import TraceEvent
 
 REVIEW_INSTRUCTION = """Audit EVERY statement against ONLY its attached quote, not surrounding text, paper title, your prior knowledge, or other claims.
 Return {verdicts:[{index:integer,supported:boolean,unsupported_details:[strings],reason:string}]}.
@@ -72,6 +72,41 @@ class Provider:
         return result
 
 
+class FallbackProvider:
+    """Bounded model fallback; it never changes endpoints or hides all failures."""
+    def __init__(self, providers: list[Provider]):
+        if not providers:
+            raise ValueError("at least one provider is required")
+        self.providers = providers
+        self.base = providers[0].base
+        self.model = ",".join(provider.model for provider in providers)
+        self.usage = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0, "usage_missing_calls": 0, "fallbacks": 0}
+
+    def call(self, role: str, instruction: str, payload: dict) -> dict:
+        last = None
+        for index, provider in enumerate(self.providers):
+            before = dict(provider.usage)
+            try:
+                result = provider.call(role, instruction, payload)
+                if index:
+                    self.usage["fallbacks"] += 1
+                return result
+            except Exception as exc:
+                last = exc
+            finally:
+                for key in ("calls", "prompt_tokens", "completion_tokens", "usage_missing_calls"):
+                    self.usage[key] += provider.usage.get(key, 0) - before.get(key, 0)
+        raise last
+
+
+def provider_from_env():
+    primary = Provider()
+    fallbacks = [name.strip() for name in os.getenv("PAPER_AGENT_FALLBACK_MODELS", "").split(",") if name.strip()]
+    if not fallbacks:
+        return primary
+    return FallbackProvider([primary] + [Provider(key=primary.key, base=primary.base, model=name) for name in fallbacks[:2]])
+
+
 class Trace:
     def __init__(self, path: Path):
         self.path = path
@@ -79,7 +114,10 @@ class Trace:
         self.start = time.perf_counter()
 
     def emit(self, role: str, event: str, **fields):
-        record={"elapsed_s":round(time.perf_counter()-self.start,4),"role":role,"event":event,**fields}
+        standard={key:fields.pop(key) for key in ["latency_ms","prompt_tokens","completion_tokens","retry_count","timeout_count","failure_reason"] if key in fields}
+        record=TraceEvent(elapsed_s=round(time.perf_counter()-self.start,4),stage=role,event=event,metadata=fields,**standard).model_dump()
+        # Keep role during the schema transition for old trace consumers.
+        record["role"]=role
         with self.lock:
             with self.path.open("a",encoding="utf-8") as f:
                 f.write(json.dumps(record,ensure_ascii=False)+"\n")
@@ -128,6 +166,31 @@ def extractive_claim(hit: dict, query: str) -> dict:
     return {"claim":quote,"quote":quote,"evidence_id":hit["id"],"kind":"source_excerpt"}
 
 
+def evidence_sufficient_for_extractive(query: str, evidence: list[dict]) -> tuple[bool, list[str]]:
+    """Reject exact-detail questions when named constraints are absent from evidence.
+
+    This is deliberately conservative and deterministic. It does not attempt semantic
+    entailment; it only prevents a nearby generic excerpt from answering a request for
+    a specific number, date, location, currency or hardware identifier.
+    """
+    if not re.search(r"\b(exact|percentage|percent|price|cost|latency|how many|number of)\b", query, re.I):
+        return True, []
+    evidence_text = " ".join(item.get("text", "") for item in evidence).lower()
+    common = {"what", "which", "when", "where", "how", "the", "does", "did", "paper"}
+    months = set("january february march april may june july august september october november december".split())
+    candidates = []
+    for position, match in enumerate(re.finditer(r"\b[A-Za-z][A-Za-z0-9-]*|\b\d+(?:\.\d+)?", query)):
+        word = match.group(0)
+        lower = word.lower()
+        specific = any(char.isdigit() for char in word) or word.isupper() or lower in months
+        specific = specific or (word[:1].isupper() and position > 0 and lower not in common)
+        specific = specific or lower in {"yuan", "dollar", "gpu", "gpus", "airport", "drone"}
+        if specific and lower not in common:
+            candidates.append(lower)
+    missing = sorted({word for word in candidates if word not in evidence_text})
+    return not missing, missing
+
+
 def bibtex(papers: list[dict]) -> str:
     def clean(value):
         return str(value or "").replace("\\", "").replace("{", "").replace("}", "").replace("\n", " ")
@@ -152,7 +215,7 @@ class Pipeline:
         self.use_checkpoints=checkpoints
         self.workers=max(1,min(workers,4))
 
-    def run(self, query: str, mode: str="extractive", max_papers: int=4, run_id: str | None=None, strategy: str="multi", evidence_packet: dict | None=None, review_policy: str="question-aware-v4") -> dict:
+    def run(self, query: str, mode: str="extractive", max_papers: int=4, run_id: str | None=None, strategy: str="multi", evidence_packet: dict | None=None, review_policy: str="question-aware-v4", evidence_gate: bool=True) -> dict:
         if strategy not in {"single","multi"}:
             raise ValueError("Invalid strategy")
         if review_policy not in {"question-aware-v4","quote-only-v3"}:
@@ -186,13 +249,15 @@ class Pipeline:
         index=Index(self.store.chunks())
         plan={"queries":[query],"dimensions":["method","evidence","limitations"]}
         errors=[]
+        planning_started=time.perf_counter()
         if mode=="llm" and strategy=="multi" and evidence_packet is None:
             proposed=self.provider.call("Planner","Return {queries: [up to 3 English search questions], dimensions: [up to 4 comparison aspects]}. Translate Chinese queries to English for retrieval.",{"question":query})
             qs=proposed.get("queries",[])
             if not isinstance(qs,list) or not qs or any(not isinstance(q,str) or not q.strip() for q in qs):
                 raise ValueError("Invalid planner output")
             plan={"queries":[q[:500] for q in qs[:3]],"dimensions":proposed.get("dimensions",[])[:4]}
-        trace.emit("planner","planned",queries=plan["queries"])
+        trace.emit("planner","planned",latency_ms=(time.perf_counter()-planning_started)*1000,queries=plan["queries"])
+        retrieval_started=time.perf_counter()
         candidates={}
         for q in plan["queries"]:
             for rank,hit in enumerate(index.search_papers(q,max_papers)):
@@ -213,6 +278,14 @@ class Pipeline:
             allowed={e["id"]:e for e in evidence_packet["evidence"]}
             selected=list(dict.fromkeys(e["paper_id"] for e in allowed.values()))
             work={pid:[e for e in allowed.values() if e["paper_id"]==pid] for pid in selected}
+        if mode=="extractive" and evidence_gate:
+            sufficient,missing=evidence_sufficient_for_extractive(query,list(allowed.values()))
+            if not sufficient:
+                trace.emit("evidence_gate","insufficient_specific_evidence",missing_constraints=missing)
+                allowed={}
+                work={pid:[] for pid in selected}
+        trace.emit("retriever","completed",latency_ms=(time.perf_counter()-retrieval_started)*1000,
+            selected_papers=len(selected),evidence_chunks=len(allowed))
         (out/"evidence.jsonl").write_text("".join(json.dumps(e,ensure_ascii=False)+"\n" for e in allowed.values()),encoding="utf-8")
 
         def research(pid):
@@ -241,6 +314,7 @@ class Pipeline:
             return pid,claims
 
         drafted=[]
+        research_started=time.perf_counter()
         if mode=="llm" and strategy=="single" and allowed:
             response=self.provider.call("Researcher",
                 "Answer the question using ONLY supplied evidence. Return {claims:[{claim,quote,evidence_id,kind}]}. At most 4 claims per paper. Quotes must be exact contiguous source substrings of at least 30 characters. If evidence cannot answer the question, return empty claims. Do not compare incompatible numbers.",
@@ -267,6 +341,8 @@ class Pipeline:
                         errors.append({"paper_id":pid,"error":safe_error(exc)})
                         trace.emit("researcher","failed",paper_id=pid,error=safe_error(exc))
         drafted.sort(key=lambda d:(d["paper_id"],str(d["candidate"].get("evidence_id", "")) if isinstance(d["candidate"],dict) else ""))
+        trace.emit("researcher","batch_completed",latency_ms=(time.perf_counter()-research_started)*1000,drafts=len(drafted),errors=len(errors))
+        verification_started=time.perf_counter()
         verified=[]
         rejected=[]
         for item in drafted:
@@ -305,6 +381,7 @@ class Pipeline:
             verified=kept
         else:
             trace.emit("synthesizer","local_assembly",note="No separate semantic reviewer was invoked")
+        trace.emit("reviewer","completed",latency_ms=(time.perf_counter()-verification_started)*1000,accepted=len(verified),rejected=len(rejected))
         papers=[p for p in self.store.papers() if p["id"] in selected]
         status="completed" if verified and not errors else ("partial" if verified else "insufficient_evidence")
         usage={k:v-initial_usage.get(k,0) for k,v in getattr(self.provider,"usage",{}).items()} if mode=="llm" else {"calls":0,"prompt_tokens":0,"completion_tokens":0}
@@ -313,6 +390,7 @@ class Pipeline:
             "checkpoints":dict(self.provider.stats) if isinstance(self.provider,CheckpointProvider) else {"hits":0,"misses":0},
             "corpus_signature":corpus_signature,"review_policy":review_policy if strategy=="multi" and mode=="llm" else "not_evaluated",
             "strategy":strategy,"frozen_evidence":evidence_packet is not None,"elapsed_s":round(time.perf_counter()-trace.start,4),
+            "evidence_gate":evidence_gate,
             "limitations":["PDF text extraction may lose table/formula structure.",
                 "Provenance checks do not establish semantic entailment or answer completeness.",
                 "Cross-paper numerical results are not automatically comparable.",

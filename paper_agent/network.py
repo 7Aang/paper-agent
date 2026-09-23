@@ -1,5 +1,4 @@
 """Constrained public-paper connector. No arbitrary URL downloads."""
-import json
 import re
 import ssl
 import time
@@ -28,7 +27,7 @@ def request_bytes(url, *, data=None, headers=None, timeout=45, limit=30*1024*102
             if exc.code not in {429,500,502,503,504} or attempt==2:
                 raise
             time.sleep(0.5*2**attempt)
-        except (TimeoutError, urllib.error.URLError) as exc:
+        except (TimeoutError, urllib.error.URLError):
             if attempt==2:
                 raise
             time.sleep(0.5*2**attempt)

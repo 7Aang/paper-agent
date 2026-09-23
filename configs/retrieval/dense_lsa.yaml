@@ -1,0 +1,6 @@
+name: dense_lsa
+method: dense
+top_k: [1, 3, 5, 10]
+level: paper
+dense_provider: lsa
+embedding_model: lsa-tfidf-svd-128

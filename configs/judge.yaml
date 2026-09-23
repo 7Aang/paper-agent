@@ -1,0 +1,6 @@
+status: NOT RUN
+reason: REQUIRES API KEY and human calibration
+model: null
+temperature: 0
+prompt_version: citation-entailment-v1
+raw_outputs_dir: results/judge/raw

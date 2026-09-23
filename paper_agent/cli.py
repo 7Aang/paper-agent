@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 from pathlib import Path
-from .agents import Pipeline,Provider
+from .agents import Pipeline,provider_from_env
 from .retrieval import Index
 from .store import Store
 
@@ -38,11 +38,12 @@ def main():
     elif args.command=="corpus":
         output=[]
         for p in json.loads(Path(args.manifest).read_text(encoding="utf-8")):
-            output.append(store.ingest(Path(args.pdf_dir)/(p["id"]+".pdf"),p["title"],p["id"],p["year"],"https://arxiv.org/abs/"+p["id"]))
+            output.append(store.ingest(Path(args.pdf_dir)/(p["id"]+".pdf"),p["title"],p["id"],p["year"],
+                p.get("source_url","https://arxiv.org/abs/"+p["id"]),p.get("authors",[]),p.get("doi"),p.get("arxiv_id",p["id"])))
     elif args.command=="search":
         output=Index(store.chunks()).search_papers(args.query,5,args.mode)
     elif args.command=="research":
-        output=Pipeline(store,args.runs,Provider() if args.mode=="llm" else None,args.workers,checkpoints=not args.fresh).run(args.query,args.mode,args.papers,strategy=args.strategy)
+        output=Pipeline(store,args.runs,provider_from_env() if args.mode=="llm" else None,args.workers,checkpoints=not args.fresh).run(args.query,args.mode,args.papers,strategy=args.strategy)
     else:
         from .server import serve
         serve(args.data,args.runs,args.port)

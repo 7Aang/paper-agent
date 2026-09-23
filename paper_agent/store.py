@@ -4,7 +4,6 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-import shutil
 import sqlite3
 import time
 from contextlib import contextmanager
@@ -49,7 +48,8 @@ class Store:
                 CREATE TABLE IF NOT EXISTS papers(
                   id TEXT PRIMARY KEY, title TEXT NOT NULL, year INTEGER,
                   url TEXT NOT NULL, sha256 TEXT NOT NULL, parser TEXT NOT NULL,
-                  filename TEXT NOT NULL, pages INTEGER NOT NULL, updated REAL NOT NULL);
+                  filename TEXT NOT NULL, pages INTEGER NOT NULL, updated REAL NOT NULL,
+                  authors TEXT NOT NULL DEFAULT '[]', doi TEXT, source_id TEXT);
                 CREATE TABLE IF NOT EXISTS pages(
                   paper_id TEXT NOT NULL REFERENCES papers(id) ON DELETE CASCADE,
                   page INTEGER NOT NULL, text TEXT NOT NULL, PRIMARY KEY(paper_id,page));
@@ -59,6 +59,10 @@ class Store:
                   page INTEGER NOT NULL, text TEXT NOT NULL);
                 CREATE INDEX IF NOT EXISTS idx_chunks_paper ON chunks(paper_id);
             """)
+            columns={row[1] for row in conn.execute("PRAGMA table_info(papers)")}
+            for name,definition in [("authors","TEXT NOT NULL DEFAULT '[]'"),("doi","TEXT"),("source_id","TEXT")]:
+                if name not in columns:
+                    conn.execute(f"ALTER TABLE papers ADD COLUMN {name} {definition}")
 
     @contextmanager
     def connect(self):
@@ -72,7 +76,9 @@ class Store:
             conn.close()
 
     def ingest(self, path: str | Path, title: str | None = None,
-               paper_id: str | None = None, year: int | None = None, url: str = "") -> dict:
+               paper_id: str | None = None, year: int | None = None, url: str = "",
+               authors: list[str] | None = None, doi: str | None = None,
+               source_id: str | None = None) -> dict:
         start = time.perf_counter()
         path = Path(path)
         if path.stat().st_size > 30 * 1024 * 1024:
@@ -96,8 +102,10 @@ class Store:
         if previous and previous["sha256"] == digest and previous["parser"] == PARSER_VERSION and (self.root/"pdfs"/previous["filename"]).is_file():
             # Metadata changes must not be lost on a cache hit.
             with self.connect() as conn:
-                conn.execute("UPDATE papers SET title=?,year=?,url=? WHERE id=?",
-                    (title or previous["title"], year if year is not None else previous["year"], url or previous["url"],paper_id))
+                conn.execute("UPDATE papers SET title=?,year=?,url=?,authors=?,doi=?,source_id=? WHERE id=?",
+                    (title or previous["title"], year if year is not None else previous["year"], url or previous["url"],
+                     json.dumps(authors,ensure_ascii=False) if authors is not None else previous["authors"],
+                     doi if doi is not None else previous["doi"],source_id if source_id is not None else previous["source_id"],paper_id))
             return {"id":paper_id,"cached":True,"pages":previous["pages"],"seconds":time.perf_counter()-start}
         pages = parse_pdf(path)
         filename = digest + ".pdf"
@@ -115,15 +123,20 @@ class Store:
                 chunks.append((f"{paper_id}:p{page['page']}:w{offset}",paper_id,page["page"],text))
         with self.connect() as conn:
             conn.execute("DELETE FROM papers WHERE id=?", (paper_id,))
-            conn.execute("INSERT INTO papers VALUES(?,?,?,?,?,?,?,?,?)",
-                (paper_id,title or path.stem,year,url,digest,PARSER_VERSION,filename,len(pages),time.time()))
+            conn.execute("INSERT INTO papers(id,title,year,url,sha256,parser,filename,pages,updated,authors,doi,source_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+                (paper_id,title or path.stem,year,url,digest,PARSER_VERSION,filename,len(pages),time.time(),
+                 json.dumps(authors or [],ensure_ascii=False),doi,source_id))
             conn.executemany("INSERT INTO pages VALUES(?,?,?)",[(paper_id,p["page"],p["text"]) for p in pages])
             conn.executemany("INSERT INTO chunks VALUES(?,?,?,?)",chunks)
         return {"id":paper_id,"cached":False,"pages":len(pages),"chunks":len(chunks),"seconds":time.perf_counter()-start}
 
     def papers(self) -> list[dict]:
         with self.connect() as conn:
-            return [dict(x) for x in conn.execute("SELECT * FROM papers ORDER BY title")]
+            rows=[dict(x) for x in conn.execute("SELECT * FROM papers ORDER BY title")]
+        for row in rows:
+            try: row["authors"]=json.loads(row.get("authors") or "[]")
+            except ValueError: row["authors"]=[]
+        return rows
 
     def chunks(self) -> list[dict]:
         with self.connect() as conn:
@@ -145,5 +158,5 @@ class Store:
             return self.root / "pdfs" / row[0] if row else None
 
     def signature(self) -> str:
-        payload = [(p["id"],p["sha256"],p["title"],p["parser"],p["year"],p["url"]) for p in self.papers()]
+        payload = [(p["id"],p["sha256"],p["title"],p["parser"],p["year"],p["url"],p["authors"],p.get("doi"),p.get("source_id")) for p in self.papers()]
         return hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()

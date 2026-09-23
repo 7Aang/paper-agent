@@ -3,6 +3,9 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+.cache/
+.model_cache/
+.test-tmp/
 .venv/
 .env
 *.egg-info/
@@ -14,6 +17,8 @@ runs/
 *.db
 *.pdf
 *.jsonl
+!benchmark/questions.jsonl
+!benchmark/agent_cases.jsonl
 
 # Generated evaluation runs; compact summaries remain versioned
 evaluation/depth_runs/

@@ -1,0 +1,8 @@
+{
+  "version": "v2.1",
+  "status": "frozen",
+  "count": 24,
+  "verified_count": 0,
+  "scope": "Assistant-authored diagnostic labels on a fixed 12-paper corpus; independent human verification pending.",
+  "sha256": "7efd7ddb9c64ac0f0f36fa8c7703cce87c4313fca85ef78b0b72369782d1c500"
+}

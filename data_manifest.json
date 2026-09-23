@@ -1,14 +1,214 @@
 [
-  {"id":"2005.11401","title":"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks","year":2020},
-  {"id":"2004.04906","title":"Dense Passage Retrieval for Open-Domain Question Answering","year":2020},
-  {"id":"2004.12832","title":"ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT","year":2020},
-  {"id":"2002.08909","title":"REALM: Retrieval-Augmented Language Model Pre-Training","year":2020},
-  {"id":"2210.03629","title":"ReAct: Synergizing Reasoning and Acting in Language Models","year":2022},
-  {"id":"2303.11366","title":"Reflexion: Language Agents with Verbal Reinforcement Learning","year":2023},
-  {"id":"2305.10601","title":"Tree of Thoughts: Deliberate Problem Solving with Large Language Models","year":2023},
-  {"id":"2302.04761","title":"Toolformer: Language Models Can Teach Themselves to Use Tools","year":2023},
-  {"id":"2310.11511","title":"Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection","year":2023},
-  {"id":"2401.15884","title":"Corrective Retrieval Augmented Generation","year":2024},
-  {"id":"2401.18059","title":"RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval","year":2024},
-  {"id":"2404.16130","title":"From Local to Global: A Graph RAG Approach to Query-Focused Summarization","year":2024}
+  {
+    "id": "2005.11401",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": [
+      "Patrick Lewis",
+      "Ethan Perez",
+      "Aleksandra Piktus",
+      "Fabio Petroni",
+      "Vladimir Karpukhin",
+      "Naman Goyal",
+      "Heinrich Küttler",
+      "Mike Lewis",
+      "Wen-tau Yih",
+      "Tim Rocktäschel",
+      "Sebastian Riedel",
+      "Douwe Kiela"
+    ],
+    "year": 2020,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2005.11401",
+    "pdf_url": "https://arxiv.org/pdf/2005.11401",
+    "arxiv_id": "2005.11401"
+  },
+  {
+    "id": "2004.04906",
+    "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "authors": [
+      "Vladimir Karpukhin",
+      "Barlas Oğuz",
+      "Sewon Min",
+      "Patrick Lewis",
+      "Ledell Wu",
+      "Sergey Edunov",
+      "Danqi Chen",
+      "Wen-tau Yih"
+    ],
+    "year": 2020,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2004.04906",
+    "pdf_url": "https://arxiv.org/pdf/2004.04906",
+    "arxiv_id": "2004.04906"
+  },
+  {
+    "id": "2004.12832",
+    "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+    "authors": [
+      "Omar Khattab",
+      "Matei Zaharia"
+    ],
+    "year": 2020,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2004.12832",
+    "pdf_url": "https://arxiv.org/pdf/2004.12832",
+    "arxiv_id": "2004.12832"
+  },
+  {
+    "id": "2002.08909",
+    "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+    "authors": [
+      "Kelvin Guu",
+      "Kenton Lee",
+      "Zora Tung",
+      "Panupong Pasupat",
+      "Ming-Wei Chang"
+    ],
+    "year": 2020,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2002.08909",
+    "pdf_url": "https://arxiv.org/pdf/2002.08909",
+    "arxiv_id": "2002.08909"
+  },
+  {
+    "id": "2210.03629",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "authors": [
+      "Shunyu Yao",
+      "Jeffrey Zhao",
+      "Dian Yu",
+      "Nan Du",
+      "Izhak Shafran",
+      "Karthik Narasimhan",
+      "Yuan Cao"
+    ],
+    "year": 2022,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2210.03629",
+    "pdf_url": "https://arxiv.org/pdf/2210.03629",
+    "arxiv_id": "2210.03629"
+  },
+  {
+    "id": "2303.11366",
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "authors": [
+      "Noah Shinn",
+      "Federico Cassano",
+      "Edward Berman",
+      "Ashwin Gopinath",
+      "Karthik Narasimhan",
+      "Shunyu Yao"
+    ],
+    "year": 2023,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2303.11366",
+    "pdf_url": "https://arxiv.org/pdf/2303.11366",
+    "arxiv_id": "2303.11366"
+  },
+  {
+    "id": "2305.10601",
+    "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+    "authors": [
+      "Shunyu Yao",
+      "Dian Yu",
+      "Jeffrey Zhao",
+      "Izhak Shafran",
+      "Thomas L. Griffiths",
+      "Yuan Cao",
+      "Karthik Narasimhan"
+    ],
+    "year": 2023,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2305.10601",
+    "pdf_url": "https://arxiv.org/pdf/2305.10601",
+    "arxiv_id": "2305.10601"
+  },
+  {
+    "id": "2302.04761",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "authors": [
+      "Timo Schick",
+      "Jane Dwivedi-Yu",
+      "Roberto Dessì",
+      "Roberta Raileanu",
+      "Maria Lomeli",
+      "Luke Zettlemoyer",
+      "Nicola Cancedda",
+      "Thomas Scialom"
+    ],
+    "year": 2023,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2302.04761",
+    "pdf_url": "https://arxiv.org/pdf/2302.04761",
+    "arxiv_id": "2302.04761"
+  },
+  {
+    "id": "2310.11511",
+    "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "authors": [
+      "Akari Asai",
+      "Zeqiu Wu",
+      "Yizhong Wang",
+      "Avirup Sil",
+      "Hannaneh Hajishirzi"
+    ],
+    "year": 2023,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2310.11511",
+    "pdf_url": "https://arxiv.org/pdf/2310.11511",
+    "arxiv_id": "2310.11511"
+  },
+  {
+    "id": "2401.15884",
+    "title": "Corrective Retrieval Augmented Generation",
+    "authors": [
+      "Shi-Qi Yan",
+      "Jia-Chen Gu",
+      "Yun Zhu",
+      "Zhen-Hua Ling"
+    ],
+    "year": 2024,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2401.15884",
+    "pdf_url": "https://arxiv.org/pdf/2401.15884",
+    "arxiv_id": "2401.15884"
+  },
+  {
+    "id": "2401.18059",
+    "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "authors": [
+      "Parth Sarthi",
+      "Salman Abdullah",
+      "Aditi Tuli",
+      "Shubh Khanna",
+      "Anna Goldie",
+      "Christopher D. Manning"
+    ],
+    "year": 2024,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2401.18059",
+    "pdf_url": "https://arxiv.org/pdf/2401.18059",
+    "arxiv_id": "2401.18059"
+  },
+  {
+    "id": "2404.16130",
+    "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+    "authors": [
+      "Darren Edge",
+      "Ha Trinh",
+      "Newman Cheng",
+      "Joshua Bradley",
+      "Alex Chao",
+      "Apurva Mody",
+      "Steven Truitt",
+      "Dasha Metropolitansky",
+      "Robert Osazuwa Ness",
+      "Jonathan Larson"
+    ],
+    "year": 2024,
+    "doi": null,
+    "source_url": "https://arxiv.org/abs/2404.16130",
+    "pdf_url": "https://arxiv.org/pdf/2404.16130",
+    "arxiv_id": "2404.16130"
+  }
 ]

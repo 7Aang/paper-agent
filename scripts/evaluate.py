@@ -1,5 +1,4 @@
 """Frozen, seed-labeled small-corpus evaluation; not a public benchmark."""
-import csv
 import hashlib
 import json
 import platform
@@ -11,7 +10,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from paper_agent.agents import Pipeline, audit_claim, select_evidence
+from paper_agent.agents import audit_claim, select_evidence
 from paper_agent.retrieval import Index
 from paper_agent.store import Store
 

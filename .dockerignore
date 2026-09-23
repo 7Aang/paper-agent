@@ -1,0 +1,8 @@
+.git
+.venv
+data
+runs
+results
+*.pdf
+*.sqlite3
+__pycache__
