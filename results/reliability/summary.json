@@ -1,0 +1,48 @@
+{
+  "status": "COMPLETED",
+  "cases": 10,
+  "recovered": 10,
+  "recovery_success_rate": 1.0,
+  "details": [
+    {
+      "case": "database_rollback",
+      "recovered": true
+    },
+    {
+      "case": "corrupt_pdf_preserves_record",
+      "recovered": true
+    },
+    {
+      "case": "concurrent_ingest_idempotent",
+      "recovered": true
+    },
+    {
+      "case": "empty_corpus_abstains",
+      "recovered": true
+    },
+    {
+      "case": "malformed_llm_output_detected",
+      "recovered": true
+    },
+    {
+      "case": "worker_timeout_contained",
+      "recovered": true
+    },
+    {
+      "case": "checkpoint_restart_recovers",
+      "recovered": true
+    },
+    {
+      "case": "corrupt_checkpoint_recomputed",
+      "recovered": true
+    },
+    {
+      "case": "http_429_retry_recovers",
+      "recovered": true
+    },
+    {
+      "case": "http_500_retry_recovers",
+      "recovered": true
+    }
+  ]
+}

@@ -32,12 +32,12 @@ flowchart LR
 | 实验 | 结果 | 适用边界 |
 |---|---:|---|
 | BM25 → Hybrid + Cross-Encoder | Hit@1 **83.3% → 100%** | 12 篇 / 24 个冻结问题；0 个独立人工复核 |
-| 轻量 Hybrid LSA | Hit@1 **91.7%**，平均检索 **1.14 ms** | 不含约 695 ms 索引构建；同上 |
+| 轻量 Hybrid LSA | Hit@1 **91.7%**，平均检索 **1.03 ms** | 不含约 652 ms 索引构建；同上 |
 | Evidence Gate OFF → ON | 拒答 **0/4 → 4/4** | 4 个构造的“缺失精确细节”问题；可回答集覆盖率保持 4/4 |
 | 引用结构校验 | **24/24** 引句可回溯原页 | 只验证 provenance，不验证语义蕴含 |
 | 故障注入 | **10/10** 场景恢复 | 本地确定性注入；不代表线上 SLA |
 
-完整定义、逐项限制、负结果和复现命令见 [Benchmark report](docs/BENCHMARK.md)。Cross-Encoder 的平均查询时延为 901.59 ms；单独使用 MiniLM Dense 的 Hit@1 只有 62.5%。字段加权没有提高当前 Hit@1，词表式 Query Expansion 使 Hit@3 从 100% 降至 95.8%，这些负结果同样保留。
+完整定义、逐项限制、负结果和复现命令见 [Benchmark report](docs/BENCHMARK.md)。Cross-Encoder 的平均查询时延为 1009.35 ms；单独使用 MiniLM Dense 的 Hit@1 只有 62.5%。字段加权没有提高当前 Hit@1，词表式 Query Expansion 使 Hit@3 从 100% 降至 95.8%，这些负结果同样保留。
 
 LLM Verifier 消融和多 Agent 对照当前状态为 `REQUIRES API KEY`，不会用历史或估计数字补齐。语义答案正确率也未声称已测。
 
