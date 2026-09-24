@@ -7,6 +7,8 @@ __pycache__/
 .model_cache/
 .test-tmp/
 .venv/
+.benchmark_deps/
+.test_deps/
 .env
 *.egg-info/
 

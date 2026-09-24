@@ -1,4 +1,4 @@
-"""One-time migration from the legacy frozen JSON to the versioned JSONL schema."""
+"""Archived v2 migration helper; use build_frozen_benchmark.py for the v3 benchmark."""
 from __future__ import annotations
 
 import json
@@ -13,6 +13,11 @@ from paper_agent.schemas import BenchmarkQuestion
 
 
 def main():
+    raise SystemExit(
+        "This migration is archived because it would overwrite benchmark v3. "
+        "Run scripts/build_frozen_benchmark.py instead."
+    )
+    # Kept below only to document the historical v2 conversion.
     source = json.loads((ROOT / "evaluation" / "heldout_v2.json").read_text(encoding="utf-8"))
     destination = ROOT / "benchmark" / "questions.jsonl"
     destination.parent.mkdir(exist_ok=True)

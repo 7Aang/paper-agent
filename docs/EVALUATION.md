@@ -7,7 +7,7 @@
 - `verified=true`: requires a recorded human review. The current benchmark contains zero such questions.
 - `frozen`: content hash is stored in `benchmark/manifest.json`; CI fails if content changes without an explicit new manifest.
 
-The current 24-question set tests retrieval on the same 12-paper corpus used during development. It is useful for regression and ablation, but it is not a public benchmark and does not measure generalization to unseen papers.
+The current 60-question set is bound by hash to a 50-paper corpus. It contains 50 answerable retrieval diagnostics and 10 constructed unanswerable questions. The labels comprise 24 retained seed questions and 26 arXiv-abstract-derived questions; none has independent human verification. It is useful for regression and ablation, but it is not a public benchmark and does not measure generalization to unseen papers.
 
 ## Retrieval levels
 

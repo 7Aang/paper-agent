@@ -1,13 +1,13 @@
 {
   "status": "COMPLETED",
-  "runs": 8,
-  "claims": 24,
+  "runs": 32,
+  "claims": 144,
   "evidence_grounded_rate_structural": 1.0,
   "semantic_entailment": "NOT RUN",
   "scope": "Deterministic exact-quote provenance only; no LLM judge and no human semantic labels.",
   "cases": [
     {
-      "run_id": "0373c1cbcbba424d9b779e2b2192aeab",
+      "run_id": "0b2e298517b94766a6d31e2698f87ade",
       "claims": 6,
       "citation_precision_structural": 1.0,
       "citation_coverage": 1.0,
@@ -50,31 +50,7 @@
       "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
     },
     {
-      "run_id": "2711031c797b42d4a360f8c3c29c38a2",
-      "claims": 0,
-      "citation_precision_structural": null,
-      "citation_coverage": null,
-      "citation_correctness_structural": null,
-      "evidence_grounded_rate_structural": null,
-      "unsupported_claim_rate_structural": null,
-      "semantic_entailment": "NOT RUN",
-      "cases": [],
-      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
-    },
-    {
-      "run_id": "3676843d7a424785b9ade4245045423a",
-      "claims": 0,
-      "citation_precision_structural": null,
-      "citation_coverage": null,
-      "citation_correctness_structural": null,
-      "evidence_grounded_rate_structural": null,
-      "unsupported_claim_rate_structural": null,
-      "semantic_entailment": "NOT RUN",
-      "cases": [],
-      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
-    },
-    {
-      "run_id": "5bda187b8fac47e4984ec3dfcaa1a104",
+      "run_id": "0f87ca3fb8e84aff979ebe83b38796ae",
       "claims": 6,
       "citation_precision_structural": 1.0,
       "citation_coverage": 1.0,
@@ -117,19 +93,7 @@
       "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
     },
     {
-      "run_id": "a7529c5f2d704aa8848dbb8f6fc47c10",
-      "claims": 0,
-      "citation_precision_structural": null,
-      "citation_coverage": null,
-      "citation_correctness_structural": null,
-      "evidence_grounded_rate_structural": null,
-      "unsupported_claim_rate_structural": null,
-      "semantic_entailment": "NOT RUN",
-      "cases": [],
-      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
-    },
-    {
-      "run_id": "eb8f7b74ebdc4f478501a6acb7d12650",
+      "run_id": "1c57a7f8bf7d4e7cb3868aaf36582603",
       "claims": 6,
       "citation_precision_structural": 1.0,
       "citation_coverage": 1.0,
@@ -172,7 +136,7 @@
       "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
     },
     {
-      "run_id": "f2faa2ee8c4346649a1a344abed5a880",
+      "run_id": "22684c379bcc459a94a314673c693fff",
       "claims": 0,
       "citation_precision_structural": null,
       "citation_coverage": null,
@@ -184,7 +148,951 @@
       "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
     },
     {
-      "run_id": "fb6148d8756140c0afc90a54011efaad",
+      "run_id": "2d4a7cba937044909e85419defe6aca2",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "2e003583f56b42958a8fecb111e515ab",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "522da9942f1d45b795ca120751e3d397",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "71a1df3e7be642f5908e939f02825de8",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "78ba9272f07c4c6a8c6173ece6bd52cb",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "8d818c3089584feb9f2a3e8e49293909",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "9250469858804020a461accd1a992512",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "96edc05d36fc43c2ac9be8064fac691f",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "9797a4e246154a4cb892f714f19f5ed6",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "9b0ce178c7264742971fe09971a448f3",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "9de82ab8c85641f3b12df46fcf363f41",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "bca774c15d6041dfa7b0456d94a8a363",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c09d5229030c43d0a61c85ada2f8f37c",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c1306e672c2343bcb303d0d051fc0f78",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c20018c480dd4770ba8bb855b07ba155",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c2c215469f814e569b2864311db118cc",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c789d3a78ae741a6857b5cd2cc9ee192",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "c95f53d7beda4588bc8d6f21537dbc35",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "d1db58517bb0467c863de39c1280ea09",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "d1f685e79aa84fc1afa3708866ff0bb1",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "dbb2ad758c0647e7b38812df0cdb977d",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "e23ecd8d2b47445680becb775b087446",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "e51c0c6896474830a25cbd40e039e408",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "e72141afd12a44ae96d0a71d102d0fcc",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "ea1c8b788c594e2cb72d6a8abd192808",
+      "claims": 0,
+      "citation_precision_structural": null,
+      "citation_coverage": null,
+      "citation_correctness_structural": null,
+      "evidence_grounded_rate_structural": null,
+      "unsupported_claim_rate_structural": null,
+      "semantic_entailment": "NOT RUN",
+      "cases": [],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "ee6eb17a965543a7b297a2d55c6e3a5d",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "f8082d37ed4644d182f00fbb78e59967",
+      "claims": 6,
+      "citation_precision_structural": 1.0,
+      "citation_coverage": 1.0,
+      "citation_correctness_structural": 1.0,
+      "evidence_grounded_rate_structural": 1.0,
+      "unsupported_claim_rate_structural": 0.0,
+      "semantic_entailment": "NOT RUN",
+      "cases": [
+        {
+          "index": 0,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 1,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 2,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 3,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 4,
+          "citation_complete": true,
+          "quote_on_page": true
+        },
+        {
+          "index": 5,
+          "citation_complete": true,
+          "quote_on_page": true
+        }
+      ],
+      "definition": "Structural metrics require paper id, page, evidence id and an exact quote present on that page; they do not prove semantic entailment."
+    },
+    {
+      "run_id": "f9bbd0f78e494c38b64e4b8f14d79e01",
       "claims": 6,
       "citation_precision_structural": 1.0,
       "citation_coverage": 1.0,

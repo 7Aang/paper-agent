@@ -1,4 +1,4 @@
-"""Frozen, seed-labeled small-corpus evaluation; not a public benchmark."""
+"""Legacy 30-query compatibility check; use run_benchmark.py for current results."""
 import hashlib
 import json
 import platform
@@ -21,8 +21,8 @@ def main():
     queries=json.loads(queries_path.read_text())
     store=Store(ROOT/'data')
     chunks=store.chunks()
-    if len(store.papers())!=12:
-        raise RuntimeError('Expected complete 12-paper corpus; run fetch and corpus ingestion first')
+    if len(store.papers())!=50:
+        raise RuntimeError('Expected complete 50-paper corpus; run fetch and corpus ingestion first')
     start=time.perf_counter();idx=Index(chunks);index_seconds=time.perf_counter()-start
     results={};details=[]
     for mode in ['baseline','bm25','optimized']:
@@ -59,7 +59,7 @@ def main():
         excerpts=sum(len(e['text']) for e in evidence)
         context.append({'query_id':q['id'],'full_selected_papers_chars':full_text,'evidence_chars':excerpts,'reduction_pct':100*(1-excerpts/max(1,full_text))})
     gates=[]
-    # 12 positives and 36 corruptions. This measures provenance detection only.
+    # One positive and three corruptions per paper. This measures provenance detection only.
     for p in store.papers():
         e=next(c for c in chunks if c['paper_id']==p['id'])
         valid={'claim':e['text'],'quote':e['text'],'evidence_id':e['id']}
@@ -69,12 +69,12 @@ def main():
         for kind,candidate,expected in candidates:
             accepted,reason=audit_claim(candidate,{e['id']:e},store)
             gates.append({'paper_id':p['id'],'kind':kind,'expected':expected,'accepted':accepted,'correct':accepted==expected,'reason':reason})
-    summary={'scope':'Local seed-labeled 12-paper / 30-query English retrieval evaluation. Not held-out, not independently annotated, not an LLM answer-quality benchmark.',
+    summary={'scope':'Legacy 30-query compatibility check on the current 50-paper corpus. Not held-out, not independently annotated, not an LLM answer-quality benchmark.',
         'query_sha256':hashlib.sha256(queries_path.read_bytes()).hexdigest(),'corpus_signature':store.signature(),
         'environment':{'python':platform.python_version(),'platform':platform.platform()},'papers':len(store.papers()),'pages':sum(p['pages'] for p in store.papers()),'chunks':len(chunks),'queries':len(queries),'index_build_s':index_seconds,
         'retrieval':results,'cache':cache,
         'context':{'unit':'characters, not tokens; selection only, quality tradeoff not evaluated','median_reduction_pct':statistics.median(x['reduction_pct'] for x in context)},
-        'provenance_gate':{'cases':len(gates),'correct':sum(x['correct'] for x in gates),'description':'12 exact-source positives + 36 structural corruptions; semantic entailment NOT measured'}}
+        'provenance_gate':{'cases':len(gates),'correct':sum(x['correct'] for x in gates),'description':f"{len(store.papers())} exact-source positives + {3 * len(store.papers())} structural corruptions; semantic entailment NOT measured"}}
     for name,data in [('summary.json',summary),('retrieval_cases.json',details),('context_cases.json',context),('provenance_cases.json',gates)]:
         (out/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
     rows=['# Reproducible local evaluation','',summary['scope'],'',f"Corpus: {summary['papers']} papers / {summary['pages']} pages / {summary['chunks']} chunks; {len(queries)} queries.",'',

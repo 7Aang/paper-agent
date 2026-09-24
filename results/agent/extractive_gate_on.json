@@ -3,13 +3,13 @@
   "mode": "extractive",
   "strategy": "multi",
   "evidence_gate": true,
-  "cases": 8,
-  "target_paper_coverage": 1.0,
+  "cases": 16,
+  "target_paper_coverage": 0.875,
   "refusal_accuracy": 1.0,
   "evidence_grounded_rate_structural": 1.0,
   "latency_s": {
-    "mean": 0.08810566249667318,
-    "median": 0.0851377999788383
+    "mean": 0.8652608249994955,
+    "median": 0.8065430499991635
   },
   "average_llm_calls": 0.0,
   "answer_correctness": "NOT RUN",
@@ -17,10 +17,10 @@
   "scope": "Target-paper coverage and exact-quote provenance are deterministic diagnostics; semantic correctness requires human review.",
   "details": [
     {
-      "id": "a1",
+      "id": "agent-h01",
       "answerable": true,
       "status": "completed",
-      "latency_s": 0.1016368999844417,
+      "latency_s": 0.8044114999938756,
       "claims": 6,
       "llm_calls": 0,
       "target_paper_coverage": 1.0,
@@ -28,10 +28,10 @@
       "quotes_on_page": true
     },
     {
-      "id": "a2",
+      "id": "agent-h02",
       "answerable": true,
       "status": "completed",
-      "latency_s": 0.09558210000977851,
+      "latency_s": 0.7890811999968719,
       "claims": 6,
       "llm_calls": 0,
       "target_paper_coverage": 1.0,
@@ -39,10 +39,10 @@
       "quotes_on_page": true
     },
     {
-      "id": "a3",
+      "id": "agent-h03",
       "answerable": true,
       "status": "completed",
-      "latency_s": 0.0824029000068549,
+      "latency_s": 0.7987957000150345,
       "claims": 6,
       "llm_calls": 0,
       "target_paper_coverage": 1.0,
@@ -50,10 +50,10 @@
       "quotes_on_page": true
     },
     {
-      "id": "a4",
+      "id": "agent-h04",
       "answerable": true,
       "status": "completed",
-      "latency_s": 0.09539329999824986,
+      "latency_s": 0.7914662999974098,
       "claims": 6,
       "llm_calls": 0,
       "target_paper_coverage": 1.0,
@@ -61,10 +61,54 @@
       "quotes_on_page": true
     },
     {
-      "id": "n1",
+      "id": "agent-h05",
+      "answerable": true,
+      "status": "completed",
+      "latency_s": 0.8002103999897372,
+      "claims": 6,
+      "llm_calls": 0,
+      "target_paper_coverage": 1.0,
+      "abstained": false,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-h06",
+      "answerable": true,
+      "status": "completed",
+      "latency_s": 0.7896392999973614,
+      "claims": 6,
+      "llm_calls": 0,
+      "target_paper_coverage": 1.0,
+      "abstained": false,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-h07",
+      "answerable": true,
+      "status": "completed",
+      "latency_s": 0.7967735000129323,
+      "claims": 6,
+      "llm_calls": 0,
+      "target_paper_coverage": 0.0,
+      "abstained": false,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-h08",
+      "answerable": true,
+      "status": "completed",
+      "latency_s": 0.8086746000044513,
+      "claims": 6,
+      "llm_calls": 0,
+      "target_paper_coverage": 1.0,
+      "abstained": false,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-n51",
       "answerable": false,
       "status": "insufficient_evidence",
-      "latency_s": 0.08349969997652806,
+      "latency_s": 0.7848000999947544,
       "claims": 0,
       "llm_calls": 0,
       "target_paper_coverage": null,
@@ -72,10 +116,10 @@
       "quotes_on_page": true
     },
     {
-      "id": "n2",
+      "id": "agent-n52",
       "answerable": false,
       "status": "insufficient_evidence",
-      "latency_s": 0.07758300000568852,
+      "latency_s": 0.8369637999858242,
       "claims": 0,
       "llm_calls": 0,
       "target_paper_coverage": null,
@@ -83,10 +127,10 @@
       "quotes_on_page": true
     },
     {
-      "id": "n3",
+      "id": "agent-n53",
       "answerable": false,
       "status": "insufficient_evidence",
-      "latency_s": 0.08197150001069531,
+      "latency_s": 0.996899999998277,
       "claims": 0,
       "llm_calls": 0,
       "target_paper_coverage": null,
@@ -94,10 +138,54 @@
       "quotes_on_page": true
     },
     {
-      "id": "n4",
+      "id": "agent-n54",
       "answerable": false,
       "status": "insufficient_evidence",
-      "latency_s": 0.08677589998114854,
+      "latency_s": 0.9567986000038218,
+      "claims": 0,
+      "llm_calls": 0,
+      "target_paper_coverage": null,
+      "abstained": true,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-n55",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "latency_s": 0.9176593000011053,
+      "claims": 0,
+      "llm_calls": 0,
+      "target_paper_coverage": null,
+      "abstained": true,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-n56",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "latency_s": 1.0180328999995254,
+      "claims": 0,
+      "llm_calls": 0,
+      "target_paper_coverage": null,
+      "abstained": true,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-n57",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "latency_s": 0.9343585000024177,
+      "claims": 0,
+      "llm_calls": 0,
+      "target_paper_coverage": null,
+      "abstained": true,
+      "quotes_on_page": true
+    },
+    {
+      "id": "agent-n58",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "latency_s": 1.0196074999985285,
       "claims": 0,
       "llm_calls": 0,
       "target_paper_coverage": null,

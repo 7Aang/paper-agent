@@ -126,6 +126,14 @@ def test_exact_detail_gate_accepts_constraints_present_in_evidence():
     )[0]
 
 
+def test_future_deployment_gate_rejects_without_exact_keyword():
+    evidence = [{"text": "The method is evaluated on public question answering datasets.", "year": 2026}]
+    ok, missing = evidence_sufficient_for_extractive(
+        "Which paper reports a 2027 randomized clinical trial with 10,000 enrolled patients?", evidence
+    )
+    assert not ok and missing == ["2027"]
+
+
 def test_model_fallback_is_bounded_and_metered():
     class Fake:
         base = "https://fixture.invalid"

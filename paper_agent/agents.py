@@ -173,8 +173,18 @@ def evidence_sufficient_for_extractive(query: str, evidence: list[dict]) -> tupl
     entailment; it only prevents a nearby generic excerpt from answering a request for
     a specific number, date, location, currency or hardware identifier.
     """
-    if not re.search(r"\b(exact|percentage|percent|price|cost|latency|how many|number of)\b", query, re.I):
+    detail_trigger = re.search(
+        r"\b(exact|percentage|percent|price|cost|latency|how many|number of|"
+        r"production|deployment|rollout|randomized|trial|revenue|incident rate|service-level)\b|\b20\d{2}\b",
+        query,
+        re.I,
+    )
+    if not detail_trigger:
         return True, []
+    query_years = {int(value) for value in re.findall(r"\b(20\d{2})\b", query)}
+    source_years = {int(item["year"]) for item in evidence if str(item.get("year", "")).isdigit()}
+    if query_years and source_years and max(query_years) > max(source_years):
+        return False, [str(year) for year in sorted(query_years) if year > max(source_years)]
     evidence_text = " ".join(item.get("text", "") for item in evidence).lower()
     common = {"what", "which", "when", "where", "how", "the", "does", "did", "paper"}
     months = set("january february march april may june july august september october november december".split())

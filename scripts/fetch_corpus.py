@@ -20,8 +20,21 @@ def main():
         try:
             if not target.exists():
                 request = urllib.request.Request(url, headers={"User-Agent":"PaperAgent-Educational/0.1"})
-                with urllib.request.urlopen(request, timeout=60) as response:
-                    payload = response.read(30 * 1024 * 1024 + 1)
+                started = time.monotonic()
+                parts = []
+                size = 0
+                with urllib.request.urlopen(request, timeout=20) as response:
+                    while True:
+                        if time.monotonic() - started > 90:
+                            raise TimeoutError("download exceeded 90-second total limit")
+                        chunk = response.read(256 * 1024)
+                        if not chunk:
+                            break
+                        parts.append(chunk)
+                        size += len(chunk)
+                        if size > 30 * 1024 * 1024:
+                            raise ValueError("Invalid or oversized PDF")
+                payload = b"".join(parts)
                 if not payload.startswith(b"%PDF") or len(payload) > 30 * 1024 * 1024:
                     raise ValueError("Invalid or oversized PDF")
                 target.write_bytes(payload)
@@ -31,7 +44,11 @@ def main():
         except Exception as exc:
             results.append({**item,"url":url,"error":str(exc)})
             print(item["id"], type(exc).__name__, flush=True)
-    (dest / "provenance.json").write_text(json.dumps(results,indent=2),encoding="utf-8")
+    payload = json.dumps(results, indent=2, ensure_ascii=False)
+    (dest / "provenance.json").write_text(payload, encoding="utf-8")
+    # Keep a tracked, compact provenance ledger beside the public manifest so a
+    # reviewer can audit URLs, byte sizes and hashes without committing PDFs.
+    (ROOT / "corpus_provenance.json").write_text(payload, encoding="utf-8")
     if any("error" in r for r in results):
         raise SystemExit(1)
 

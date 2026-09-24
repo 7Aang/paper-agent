@@ -52,8 +52,13 @@ def main():
     retriever = build_retriever(store.chunks(), config, ROOT / ".model_cache")
     build_ms = (time.perf_counter() - started) * 1000
     details, latencies = [], []
+    skipped_unanswerable = 0
+    skipped_missing_chunk_labels = 0
     max_k = max(config.top_k)
     for question in questions:
+        if not question.answerable:
+            skipped_unanswerable += 1
+            continue
         start = time.perf_counter()
         if config.level == "paper":
             hits = paper_results(retriever, question.question, max_k)
@@ -64,6 +69,7 @@ def main():
             ranked = [row["id"] for row in hits]
             relevant = set(question.ground_truth_chunks)
             if not relevant:
+                skipped_missing_chunk_labels += 1
                 continue
         latency = (time.perf_counter() - start) * 1000
         latencies.append(latency)
@@ -85,7 +91,10 @@ def main():
         "environment": {"python": platform.python_version(), "platform": platform.platform()},
         "papers": len(store.papers()),
         "chunks": len(store.chunks()),
-        "questions": len(details),
+        "frozen_questions": len(questions),
+        "evaluated_questions": len(details),
+        "skipped_unanswerable": skipped_unanswerable,
+        "skipped_missing_chunk_labels": skipped_missing_chunk_labels,
         "verified_questions": sum(q.verified for q in questions),
         "index_build_ms": build_ms,
         "latency_ms": {"mean": sum(latencies) / len(latencies), "p50": percentile(latencies, .5), "p95": percentile(latencies, .95)},
@@ -97,7 +106,7 @@ def main():
     with (out / "cases.csv").open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.DictWriter(handle, fieldnames=details[0].keys())
         writer.writeheader(); writer.writerows(details)
-    lines = [f"# Retrieval benchmark: {config.name}", "", metadata.limitation or "", "", f"- Corpus: {summary['papers']} papers / {summary['chunks']} chunks", f"- Questions: {summary['questions']} ({summary['verified_questions']} independently verified)", f"- Index build: {build_ms:.2f} ms", f"- Query latency: mean {summary['latency_ms']['mean']:.2f} ms, P95 {summary['latency_ms']['p95']:.2f} ms", "", "| Metric | Value |", "|---|---:|"]
+    lines = [f"# Retrieval benchmark: {config.name}", "", metadata.limitation or "", "", f"- Corpus: {summary['papers']} papers / {summary['chunks']} chunks", f"- Frozen questions: {summary['frozen_questions']} ({summary['verified_questions']} independently verified)", f"- Evaluated answerable questions: {summary['evaluated_questions']} (skipped {summary['skipped_unanswerable']} unanswerable)", f"- Index build: {build_ms:.2f} ms", f"- Query latency: mean {summary['latency_ms']['mean']:.2f} ms, P95 {summary['latency_ms']['p95']:.2f} ms", "", "| Metric | Value |", "|---|---:|"]
     lines.extend(f"| {key} | {value:.4f} |" for key, value in summary["metrics"].items())
     (out / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(out), **summary}, ensure_ascii=False, indent=2))

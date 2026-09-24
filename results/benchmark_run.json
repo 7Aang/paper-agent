@@ -1,0 +1,205 @@
+{
+  "status": "COMPLETED",
+  "timestamp": "2026-09-23T14:36:03.198213+00:00",
+  "profile": "full",
+  "steps": [
+    {
+      "label": "validate frozen benchmark",
+      "command": [
+        "python",
+        "scripts/validate_benchmark.py"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.197,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval bm25",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/bm25.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.685,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval bm25_field",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/bm25_field.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.703,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval bm25_field_qe",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/bm25_field_qe.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.709,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval dense_lsa",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/dense_lsa.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 1.878,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval hybrid_lsa",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/hybrid_lsa.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 2.007,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval dense",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/dense.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 98.715,
+      "required": false,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval hybrid",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/hybrid.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 74.647,
+      "required": false,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "retrieval hybrid_reranker",
+      "command": [
+        "python",
+        "scripts/eval_retrieval.py",
+        "--config",
+        "configs/retrieval/hybrid_reranker.yaml"
+      ],
+      "returncode": 0,
+      "elapsed_s": 137.372,
+      "required": false,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "extractive agent gate off",
+      "command": [
+        "python",
+        "scripts/eval_agent.py",
+        "--mode",
+        "extractive",
+        "--no-evidence-gate",
+        "--runs",
+        "runs/agent-benchmark-v3/20260923T143540Z",
+        "--output",
+        "results/agent/extractive_gate_off.json"
+      ],
+      "returncode": 0,
+      "elapsed_s": 6.868,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "extractive agent gate on",
+      "command": [
+        "python",
+        "scripts/eval_agent.py",
+        "--mode",
+        "extractive",
+        "--runs",
+        "runs/agent-benchmark-v3/20260923T143540Z",
+        "--output",
+        "results/agent/extractive_gate_on.json"
+      ],
+      "returncode": 0,
+      "elapsed_s": 14.165,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "citation provenance",
+      "command": [
+        "python",
+        "scripts/eval_citations.py",
+        "--runs",
+        "runs/agent-benchmark-v3/20260923T143540Z"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.479,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "fault injection",
+      "command": [
+        "python",
+        "scripts/eval_failures.py"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.789,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "performance export",
+      "command": [
+        "python",
+        "scripts/export_performance.py",
+        "--runs",
+        "runs/agent-benchmark-v3/20260923T143540Z"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.231,
+      "required": true,
+      "status": "COMPLETED"
+    },
+    {
+      "label": "benchmark report",
+      "command": [
+        "python",
+        "scripts/build_report.py"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.164,
+      "required": true,
+      "status": "COMPLETED"
+    }
+  ]
+}
